@@ -50,7 +50,7 @@ echo;
 
 # controller install?
 echo;
-read -p "Is this the controller node? " -n 2 -r
+read -p "Is this the controller node? (y/n)" -n 2 -r
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
 	# prompt for a few things we'll need for mysql
@@ -84,7 +84,7 @@ export SG_SERVICE_REGION=$region
 EOF
 
 	# single or multi?
-	read -p "Is this a multi node install? " -n 2 -r
+	read -p "Is this a multi node install? (y/n)" -n 2 -r
 	if [[ $REPLY =~ ^[Yy]$ ]]
 	then
 		echo;
