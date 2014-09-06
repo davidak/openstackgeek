@@ -98,10 +98,10 @@ echo "##########################################################################
 
 The StackMonkey appliance will take about 10 minutes to build.  
 
-A private key called 'stackmonkey.pem' has been created and placed in this directory.  You will be 
+A private key called 'stackmonkey-id' has been created and placed in this directory.  You will be 
 able to use this key to ssh into the appliance.  Copy it somwhere safe and then use it like this:
 
-    ssh -i stackmonkey.pem ubuntu@$APPLIANCE_IP
+    ssh -i stackmonkey-id ubuntu@$APPLIANCE_IP
 
 A new OpenStack account has been created: $OS_USERNAME/$OS_PASSWORD.  Use this account to login and
 download the API credentials file to your local machine.  You will need to upload this file to the
