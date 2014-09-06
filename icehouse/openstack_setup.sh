@@ -50,7 +50,7 @@ echo;
 
 # controller install?
 echo;
-read -p "Is this the controller node? (y/n)" -n 2 -r
+read -p "Is this the controller node? [Y/n] " -n 2 -r
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
 	# prompt for a few things we'll need for mysql
@@ -83,21 +83,21 @@ export SG_SERVICE_TOKEN=$token
 export SG_SERVICE_REGION=$region
 EOF
 
-	# single or multi?
-	read -p "Is this a multi node install? (y/n)" -n 2 -r
-	if [[ $REPLY =~ ^[Yy]$ ]]
-	then
-		echo;
-		echo "The following URL will be used for configuring the other rigs in this cluster.  Copy it."
-		echo;
-		cat setuprc | curl -F 'geek=<-' https://sgsprunge.appspot.com 
+# single or multi?
+read -p "Is this a multi node install? [Y/n] " -n 2 -r
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	echo;
+	echo "The following URL will be used for configuring the other rigs in this cluster.  Copy it."
+	echo;
+	cat setuprc | curl -F 'geek=<-' https://sgsprunge.appspot.com 
 
-# again, don't unindent!
-# tack on an indicator we're the controller
-cat >> setuprc <<EOF
-export SG_SERVICE_CONTROLLER=1
-EOF
-	fi
+	# again, don't unindent!
+	# tack on an indicator we're the controller
+	cat >> setuprc <<EOF
+	export SG_SERVICE_CONTROLLER=1
+	EOF
+fi
 
 else
 	echo;
