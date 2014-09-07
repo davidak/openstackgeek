@@ -15,7 +15,7 @@ This script has already been run.  If you want to launch a new StackMonkey VA, e
 on the command line:
 
   . ./stackmonkeyrc
-  nova boot --poll --key_name stackmonkey --user-data postcreation.sh --flavor 1 --image 'Ubuntu Precise 12.04 LTS' 'StackMonkey VA'  
+  nova boot --poll --key_name stackmonkey --user-data postcreation.sh --security-groups appliance --flavor m512.v1.d8 --image 'Ubuntu Trusty 14.04 LTS' 'StackMonkey VA'
   nova list
 
 ####################################################################################################	
